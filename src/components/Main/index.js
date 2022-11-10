@@ -18,11 +18,19 @@ function Main() {
       date={postData.date} 
       author={postData.author}
       text={postData.text}
-      highlights={postData.highlights}
+      highlights={postData.highlights.map((highlightedItem) => {
+        console.log(highlightedItem)
+        return <li 
+        text ={highlightedItem}>
+        </li>
+        
+      })}
       src={postData.image.link}
       alt={postData.image.alt} />
     })}
   </main>;
+
+
 }
 
 export default Main;
