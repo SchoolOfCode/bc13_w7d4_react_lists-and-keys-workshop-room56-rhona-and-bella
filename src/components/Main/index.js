@@ -9,7 +9,20 @@ import Post from '../Post';
 function Main() {
   const [posts, setPosts] = useState(samplePosts);
 
-  return <main id="main"></main>;
+  return <main id="main">
+    {posts.map((postData) => {
+      console.log(postData.image.link, postData.image.alt)
+      return <Post 
+      key={postData.postId}
+      title={postData.title} 
+      date={postData.date} 
+      author={postData.author}
+      text={postData.text}
+      highlights={postData.highlights}
+      src={postData.image.link}
+      alt={postData.image.alt} />
+    })}
+  </main>;
 }
 
 export default Main;
